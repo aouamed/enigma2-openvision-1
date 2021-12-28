@@ -1,6 +1,3 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
-from __future__ import print_function
 from Components.Sources.Source import Source
 
 
@@ -15,9 +12,9 @@ class Config(Source):
 	config = property(getConfig)
 
 	def getHTML(self, id):
-		print("[Config] getHTML", self, id)
+		print("[Config] getHTML %s %s", (str(self), str(id)))
 		return self.__config.getHTML(id)
 
 	def handleCommand(self, cmd):
-		print("[Config] ASSIGN:", cmd)
+		print("[Config] ASSIGN: %s", str(cmd))
 		self.__config.unsafeAssign(cmd)

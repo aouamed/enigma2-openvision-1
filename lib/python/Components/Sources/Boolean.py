@@ -1,5 +1,3 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
 from Components.Sources.Source import Source
 from Components.Element import cached
 from enigma import eTimer
@@ -25,7 +23,6 @@ class Boolean(Source):
 			self.poll_timer.start(poll)
 		else:
 			self.poll_timer = None
-		return
 
 	@cached
 	def getBoolean(self):
@@ -33,7 +30,6 @@ class Boolean(Source):
 			return self.function()
 		else:
 			return self.fixed
-		return
 
 	def setBoolean(self, value):
 		assert self.function is None
@@ -57,4 +53,3 @@ class Boolean(Source):
 			pass
 
 		Source.destroy(self)
-		return
